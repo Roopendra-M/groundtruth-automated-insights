@@ -216,9 +216,10 @@ pip install -r requirements.txt
 
 ```ini
 GEMINI_API_KEY=YOUR_KEY_HERE
+GEMINI_MODEL_ID=gemini-2.5-pro
 ```
 
-*Note: Currently configured in `backend/app.py`*
+*Note: Default values exist in `backend/app.py`, but using env vars is recommended.*
 
 ### Run Backend
 
