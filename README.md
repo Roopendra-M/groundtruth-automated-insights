@@ -221,19 +221,19 @@ This approach ensures **full automation**, scalability, and a seamless user expe
 
 ---
 
-## 🖼️ Visual Proof
+## 🖼️ Visual Proof (Using GitHub Image Links)
 
 ### Dashboard  
-[ADD DASHBOARD IMAGE HERE]
+![Dashboard](https://raw.githubusercontent.com/Roopendra-M/groundtruth-automated-insights/main/assets/dashboard.png)
 
 ### KPIs  
-[ADD KPI CARDS IMAGE HERE]
+![KPIs](https://raw.githubusercontent.com/Roopendra-M/groundtruth-automated-insights/main/assets/kpis.png)
 
 ### AI Insights  
-[ADD INSIGHTS IMAGE HERE]
+![AI Insights](https://raw.githubusercontent.com/Roopendra-M/groundtruth-automated-insights/main/assets/ai_insights.png)
 
 ### Final PDF  
-[ADD REPORT OUTPUT IMAGE HERE]
+![PDF Report](https://raw.githubusercontent.com/Roopendra-M/groundtruth-automated-insights/main/assets/final_report.png)
 
 ---
 
