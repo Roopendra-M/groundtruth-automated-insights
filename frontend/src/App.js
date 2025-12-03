@@ -75,6 +75,26 @@ function App() {
     }
   };
 
+  const handleExportPPTX = async () => {
+    try {
+      const response = await axios.post(
+        `${API_BASE_URL}/export/pptx`,
+        reportData,
+        { responseType: 'blob' }
+      );
+
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', `analytics_report_${new Date().toISOString().split('T')[0]}.pptx`);
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+    } catch (err) {
+      setError('Failed to export PPTX. Please try again.');
+    }
+  };
+
   return (
     <Container maxWidth="lg" sx={{ py: 4 }}>
       <Box sx={{ textAlign: 'center', mb: 4 }}>
@@ -104,7 +124,11 @@ function App() {
         )}
 
         {activeTab === 1 && reportData && (
-          <ReportViewer reportData={reportData} onExportPDF={handleExportPDF} />
+          <ReportViewer
+            reportData={reportData}
+            onExportPDF={handleExportPDF}
+            onExportPPTX={handleExportPPTX}
+          />
         )}
 
         {activeTab === 2 && reportData && (
