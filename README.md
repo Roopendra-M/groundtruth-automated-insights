@@ -109,6 +109,76 @@ Users receive:
     │ Downloadable PDF       │
     └────────────────────────┘
 ```
+---
+
+## 🛠️ Technical Approach
+
+The solution was designed using a modular, scalable and automation-focused architecture.  
+The workflow follows a clear step-by-step pipeline:
+
+### **1. Data Ingestion**
+- User uploads CSV through the React interface.
+- File is sent to Flask backend via REST API.
+- Backend reads data using Pandas and validates missing/invalid values.
+
+### **2. Data Cleaning & Preprocessing**
+- Automatically detects numeric, categorical, and date columns.
+- Handles:
+  - Missing values  
+  - Incorrect data types  
+  - Outliers  
+  - Duplicate rows  
+- Converts cleaned data into a structured dataframe ready for analysis.
+
+### **3. KPI Extraction**
+- Generates 6–12 KPIs depending on the dataset:
+  - Total impressions, clicks  
+  - CTR, conversion rate  
+  - Top city/day/hour  
+  - Growth % week-over-week  
+  - Cost metrics (if available)
+
+### **4. Trend & Anomaly Detection**
+- Trend detection using rolling averages.
+- Anomaly detection using Z-score deviation.
+- Highlights sudden spikes or drops with contextual reasons.
+
+### **5. Correlation Analysis**
+- Computes correlations between:
+  - Traffic ↔ Conversions  
+  - Weather ↔ Engagement  
+  - Cities ↔ Performance  
+  - Time-based metrics  
+
+### **6. AI Insight Generation (Gemini)**
+- The cleaned dataset summary + KPIs + charts are fed to Gemini through a structured prompt.
+- Gemini generates:
+  - Natural-language insights  
+  - Executive summary  
+  - Recommendations  
+  - Chart captions  
+
+### **7. PDF Report Generation**
+- All insights, KPIs, and charts are rendered using ReportLab.
+- Creates a clean, professional, client-ready PDF file.
+- PDF includes:
+  - Title page  
+  - KPI summary  
+  - Trend charts  
+  - Insights  
+  - Recommendations  
+
+### **8. Interactive Chatbot**
+- Users can ask questions like:
+  - “Why did CTR drop yesterday?”
+  - “Which city has the best performance?”
+- The chatbot uses dataset memory + Gemini reasoning.
+
+### **9. Download & Share**
+- Final PDF report is downloadable directly from the dashboard.
+- Ready for client presentation.
+
+This approach ensures **full automation**, scalability, and a seamless user experience end-to-end.
 
 ---
 
